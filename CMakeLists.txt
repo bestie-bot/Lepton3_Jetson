@@ -19,6 +19,10 @@ add_subdirectory (opencv_demo)
 # Check Fever App
 add_subdirectory (check_fever_app)
 
+# Python Bindings
+add_subdirectory (python_bindings)
+
+
 # Qt ZED app
 find_package(Qt5 COMPONENTS Widgets)
 find_package(ZED 3)
