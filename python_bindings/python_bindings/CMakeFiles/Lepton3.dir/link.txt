@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,Lepton3.so -o Lepton3.so CMakeFiles/Lepton3.dir/Lepton3Module.cpp.o  /usr/lib/aarch64-linux-gnu/libpython3.8.so ../grabber_lib/liblepton3_grabber.a ../grabber_lib/Lepton_SDK/liblepton_sdk.a -ldl 

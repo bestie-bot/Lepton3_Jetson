@@ -7,7 +7,9 @@ set(CMAKE_DEBUG_POSTFIX "_d")
 
 #########################################################
 # FLAGS
-set (CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 #########################################################
 
 # Letpon3 Library source code

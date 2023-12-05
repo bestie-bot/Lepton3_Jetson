@@ -20,49 +20,17 @@ More info on Myzhar website [blog post](https://www.myzhar.com/blog/jetson-nano-
 
 Install build requirements
 
-`$ sudo apt install build-essential g++ libopencv-dev`
-
-### Install latest CMake
-
-At least CMake 3.15 is required. Check your current version:
-
 ```
-cmake --version
-```
-
-Download CMake 3.18 sources:
-
-```
-version=3.18
-build=1
-mkdir ~/temp
-cd ~/temp
-wget https://cmake.org/files/v$version/cmake-$version.$build.tar.gz
-tar -xzvf cmake-$version.$build.tar.gz
-cd cmake-$version.$build/
-```
-
-Build and install:
-
-```
-./bootstrap
-make -j$(nproc)
-sudo make install
-```
-
-*Note*: in case you get an error about `OpenSSL` not found, you can install it using the command:
-`sudo apt-get install libssl-dev`
-
-Verify:
-```
-cmake --version
+sudo apt install build-essential g++ libopencv-dev libssl-dev python3-dev
 ```
 
 ### Build the project
 
 Clone this repository
 
-`$ git clone https://github.com/Myzhar/Lepton3_Jetson.git`
+```
+git clone https://github.com/Myzhar/Lepton3_Jetson.git
+```
    
 Compile
 
