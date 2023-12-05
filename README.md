@@ -2,10 +2,6 @@
 
 Library and examples to connect the FLIR Lepton3 thermal camera to Nvidia Jetson Orin Nano (specific) embedded boards
 
-<img src="images/Lepton3.jpg" width="250" height="250">
-
-More info on Myzhar website [blog post](https://www.myzhar.com/blog/jetson-nano-with-flir-lepton3/)
-
 ## Prerequisites
 
 * [Flir Lepton 3 or 3.5 module](https://www.flir.it/products/lepton/?model=500-0276-01)
@@ -55,7 +51,7 @@ Here are the pin configs:
 
 Older reference instruction about how to connect the previous 1.4 Lepton3 module to a Nvidia Jetson Nano are available on [Myzhar's website](https://www.myzhar.com/blog/?p=4500).
 
-### SPI buffer size change
+### SPI Fixes and Customization
 
 The default buffer size use for SPI communication is set to 8192 bytes by the spidev module. Lepton3 requires 20KB of buffer to retrieve a full segment of data that composes the thermal image.
 
