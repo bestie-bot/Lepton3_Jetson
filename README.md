@@ -1,6 +1,6 @@
 # Lepton3_Jetson
 
-Library and examples to connect the FLIR Lepton3 thermal camera to Nvidia Jetson embedded boards
+Library and examples to connect the FLIR Lepton3 thermal camera to Nvidia Jetson Orin Nano (specific) embedded boards
 
 <img src="images/Lepton3.jpg" width="250" height="250">
 
@@ -8,13 +8,10 @@ More info on Myzhar website [blog post](https://www.myzhar.com/blog/jetson-nano-
 
 ## Prerequisites
 
-* [Flir Lepton 3 module](https://www.flir.it/products/lepton/?model=500-0276-01) (can work also with Lepton 3.5)
-* [Breakout Board v1.4 by Getlab](https://groupgets.com/manufacturers/getlab/products/flir-lepton-breakout-board-v1-4)
-* [An Nvidia Jetson board](https://www.nvidia.com/en-us/autonomous-machines/jetson-store/) (tested on Jetson Nano with Jetpack 3.3)
+* [Flir Lepton 3 or 3.5module](https://www.flir.it/products/lepton/?model=500-0276-01) (can work also with Lepton 3.5)
+* [Breakout Board v2.0 by Getlab](https://www.flir.com/products/lepton-breakout-board-v2.0?vertical=microcam&segment=oem)
+* [An Nvidia Jetson board](https://www.nvidia.com/en-us/autonomous-machines/jetson-store/) (tested on Jetson Orin Nano with Jetpack 5.1.2)
 * OpenCV library to compile the examples
-* CMake > 2.8.9
-
-**Note**: as pointed out by @ma-ludw in [this issue](https://github.com/Myzhar/Lepton3_Jetson/issues/14), it is highly recommended to run the `jetson_clocks.sh` script in order to obtain the maximum performances from the Jetson Nano and hence reduce the amount of missed frames.
 
 ## Software Installation
 
@@ -52,7 +49,7 @@ Detailed instruction about how to connect the Lepton3 module to a Nvidia Jetson 
 
 ### SPI buffer size change
 
-The default buffer size use for SPI communication is set to 4096 bytes by the spidev module. Lepton3 requires 20KB of buffer to retrieve a full segment of data that composes the thermal image.
+The default buffer size use for SPI communication is set to 8192 bytes by the spidev module. Lepton3 requires 20KB of buffer to retrieve a full segment of data that composes the thermal image.
 
 You can get the procedure to change the size of the SPI buffer for the Jetson Nano on the [Myzhar's blog](https://www.myzhar.com/blog/jetson-nano-with-flir-lepton3/#Change_SPI_buffer_size).
 
