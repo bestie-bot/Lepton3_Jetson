@@ -26,7 +26,7 @@ sudo apt install build-essential g++ libopencv-dev libssl-dev python3-dev
 Clone this repository
 
 ```
-git clone https://github.com/Myzhar/Lepton3_Jetson.git
+git clone https://github.com/bestie-bot/Lepton3_Jetson
 ```
    
 Compile
