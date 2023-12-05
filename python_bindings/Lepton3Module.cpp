@@ -43,14 +43,19 @@ static int PyLepton3_Init(PyLepton3_Object* self, PyObject* args, PyObject* kwds
     const char* i2c_port = NULL;    
     Lepton3::DebugLvl deb_lvl = Lepton3::DBG_NONE;
 
-    static char* kwlist[] = { "spiDevice", "i2c_port",  NULL };
+    // Declare static char arrays for keyword list
+    static char kwlist_spiDevice[] = "spiDevice";
+    static char kwlist_i2c_port[] = "i2c_port";
+    static char* kwlist[] = { kwlist_spiDevice, kwlist_i2c_port, NULL };
 
+    // Parse arguments and keywords
     if (!PyArg_ParseTupleAndKeywords(args, kwds, "ss", kwlist, 
                                         &spiDevice, &i2c_port))
     {
         return -1;
     }
     
+    // Create new Lepton3 object with the parsed arguments
     self->lepton3 = new Lepton3(spiDevice, i2c_port, deb_lvl);
     return 0;
 }
@@ -97,13 +102,13 @@ static PyObject* PyLepton3_GetFrame16(PyLepton3_Object* self)
         double diff = static_cast<double>(max - min); // Image range
         double scale = 255./diff; // Scale factor
         
-        if ( frame != NULL)
+        if (frame != NULL)
         {
             // put items from frame into a Python list
-            PyObject* pyList = PyList_New(FRAME_W*FRAME_H);
-            for (int i = 0; i < FRAME_W * FRAME_H; i++)
+            PyObject* pyList = PyList_New(width * height); // Use the width and height variables
+            for (int i = 0; i < width * height; i++) // Use the width and height variables
             {
-                double px = scale*(frame[i]-min);
+                double px = scale * (frame[i] - min);
                 PyObject* pyItem = PyLong_FromLong(frame[i]);
                 PyList_SetItem(pyList, i, pyItem);
             }
