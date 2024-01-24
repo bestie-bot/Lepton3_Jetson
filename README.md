@@ -63,7 +63,7 @@ Here are some notes on challenges and gotchas:
 ```
 sudo nano /etc/modprobe.d/spidev.conf
 ```
-`options spidev bufsiz=20480`
+`options spidev bufsize=20480`
 You can verify the buffer size here:
 `cat /sys/module/spidev/parameters/bufsize`
 

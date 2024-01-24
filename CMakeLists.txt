@@ -21,6 +21,9 @@ add_subdirectory (opencv_demo)
 # Check Fever App
 add_subdirectory (check_fever_app)
 
+# Check Fever App
+add_subdirectory (custom_temp_app)
+
 # Python Bindings
 add_subdirectory (python_bindings)
 

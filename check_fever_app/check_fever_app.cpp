@@ -99,7 +99,7 @@ int main (int argc, char *argv[])
 
     Lepton3::DebugLvl deb_lvl = Lepton3::DBG_NONE;
 
-    lepton3 = new Lepton3( "/dev/spidev0.0", "/dev/i2c-0", deb_lvl ); // use SPI1 and I2C-1 ports
+    lepton3 = new Lepton3( "/dev/spidev0.0", "/dev/i2c-1", deb_lvl ); // use SPI1 and I2C-1 ports
     lepton3->start();
 
     // Disable RRGB mode to get raw 14bit values
